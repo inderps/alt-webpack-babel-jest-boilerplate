@@ -1,11 +1,10 @@
 import 'babel/polyfill';
 import React from 'react';
-import Router from 'react-router';
+import { Router, Route, Link } from 'react-router'
 import FastClick from 'fastclick';
-import App from './components/App';
-
+import App from './components/App/App';
 const appContainer = document.getElementById('app');
-const Route = Router.Route;
+
 const Routes = (
   <Route handler={App}>
   <Route name="/" handler={App}/>
@@ -14,9 +13,12 @@ const Routes = (
 
 function run() {
   FastClick.attach(document.body);
-  Router.run(Routes, function handler(Handler) {
-    React.render(<Handler/>, appContainer);
-  });
+  React.render((
+    <Router>
+      <Route path="/" component={App}/>
+    </Router>
+  ), appContainer);
 }
 
-window.attachEvent('onload', run);
+window.onload = run;
+
