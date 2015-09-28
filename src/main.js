@@ -1,4 +1,5 @@
 import 'babel/polyfill';
+import './main.scss';
 import React from 'react';
 import { Router, Route } from 'react-router';
 import FastClick from 'fastclick';
