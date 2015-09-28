@@ -28,7 +28,8 @@
     "eslint-plugin-react": "^3.4.2",
     "gaze": "^0.5.1",
     "glob": "^5.0.14",
-    "jest-cli": "^0.5.7",
+    "babel-jest": "*",
+    "jest-cli": "*",
     "jscs": "^2.1.1",
     "lodash.merge": "^3.3.2",
     "mkdirp": "^0.5.1",
@@ -48,9 +49,13 @@
   },
   "jest": {
     "rootDir": "./src",
-    "scriptPreprocessor": "../preprocessor.js",
+    "scriptPreprocessor": "../node_modules/babel-jest",
+    "testFileExtensions": ["es6", "js"],
+    "moduleFileExtensions": ["js", "json", "es6"],
     "unmockedModulePathPatterns": [
-      "react"
+      "../node_modules/react",
+      "../node_modules/alt",
+      "alt.js"
     ]
   },
   "scripts": {
