@@ -54,7 +54,7 @@
     ]
   },
   "scripts": {
-    "lint": "eslint src tools && jscs src tools",
+    "lint": "eslint src && jscs src",
     "csslint": "csscomb src/components --lint --verbose",
     "csscomb": "csscomb src/components --verbose",
     "test": "eslint src && jest",
